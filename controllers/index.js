@@ -3,6 +3,10 @@ const Comment = require("../models/comment");
 const Question = require("../models/question");
 const User = require("../models/user");
 
+async function handleHelloWorld(req, res) {
+    return res.json({ msg: "Hello World" });
+}
+
 async function handleUpdateVoteById(req, res) {
     const body = req.body;
     const update = {};
@@ -50,4 +54,8 @@ async function handleSearch(req, res) {
     }
 }
 
-module.exports = { handleUpdateVoteById, handleSearch };
+module.exports = {
+    handleHelloWorld,
+    handleUpdateVoteById,
+    handleSearch,
+};
